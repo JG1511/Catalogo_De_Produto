@@ -1,4 +1,7 @@
 <h2>Catálogo de Produto</h2>
+<p-toast />
+<p-confirmdialog />
+
 <table>
   <tr>
     <td><label for="id">ID</label></td>
@@ -26,6 +29,7 @@
           <th>Nome</th>
           <th>Preço</th>
           <th>Categoria</th>
+          <th>Excluir</th>
       </tr>
   </ng-template>
   <ng-template #body let-produto>
@@ -34,6 +38,7 @@
           <td>{{ produto.nome }}</td>
           <td>{{ produto.preco }}</td>
           <td>{{ produto.categoria}}</td>
+          <p-button icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true" (click)="deleteProduct(produto)" />
       </tr>
   </ng-template>
   <tr>
